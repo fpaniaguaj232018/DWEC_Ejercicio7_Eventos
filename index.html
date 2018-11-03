@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/estilo.css">
+    <title>Document</title>
+    <script>
+    var divResultado;
+    function inicializacion(){
+        divResultado = document.getElementById("resultado");
+    }    
+    function eventoDC(){
+        divResultado.innerHTML = "DOBLE CLICK";
+    }
+    function eventoMD(infoEvento){
+        divResultado.innerHTML = "MOUSE DOWN";
+        console.log(infoEvento.clientX);
+    }
+    function eventoMU(){
+        divResultado.innerHTML = "MOUSE UP";
+    }
+    function eventoMOver(){
+        divResultado.innerHTML = "MOUSE OVER";
+    }
+    function eventoMOut(){
+        divResultado.innerHTML = "MOUSE OUT";
+    }
+
+    </script>
+</head>
+<body onload="inicializacion()">
+    <div class="cuadradito rojo" ondblclick="eventoDC()">1</div>
+    <div class="cuadradito verde" onmousedown="eventoMD(event)">2</div>
+    <div class="cuadradito azul" onmouseup="eventoMU()">3</div>
+    <div class="cuadradito amarillo" onmouseover="eventoMOver()" onmouseout="eventoMOut()">4</div>
+    <div class="cuadradito violeta">5</div>
+    <div id="resultado"></div>
+</body>
+</html>
